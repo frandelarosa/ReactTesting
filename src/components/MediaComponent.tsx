@@ -1,27 +1,29 @@
-import React from "react";
-import MediaItem from "../models/media"
+import React from 'react';
+import Media from '../models/media'
 
-class MediaItems extends React.Component {
+export function MediaItems({ items }: { items: Array<Media> }) {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: Array<MediaItem>
-    };
-  }
+  return (
 
-  render() {
-    return (
+      items.map(element => {
+        return <MediaItem item={element}/>
+      })
 
-      <div className="items">
-        {this.props.items.forEach(element => {
-          <div>{element.name}</div>
-        })}
-      </div>
-      
-    )
-  }
+  );
 
 }
 
-export default MediaItems
+export default function MediaItem({item}){
+
+  return(
+    <div className="card">
+      <div>
+      {item.getName()}
+      </div>
+      <div>
+      {item.getYear()}
+      </div>
+    </div>
+  )
+  
+}

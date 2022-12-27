@@ -12,6 +12,18 @@ class Media {
 
     }
 
+    getName() :string {
+        return this.name
+    }
+
+    getYear(): string {
+        return this.year
+    }
+
+    getPoster(): string {
+        return this.poster
+    }
+
 }
 
 export default Media
